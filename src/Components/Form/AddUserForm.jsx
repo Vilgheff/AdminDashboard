@@ -1,6 +1,6 @@
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input } from "antd";
+import { useDispatch, useSelector } from 'react-redux'
 import React from "react";
-const { Option } = Select;
 const layout = {
   labelCol: {
     span: 8,
@@ -17,17 +17,16 @@ const tailLayout = {
 };
 export const AddUserForm = ({setDataSource}) => {
   const formRef = React.useRef(null);
+  const usersStore = useSelector((state)=>state.users);
+  const dispatch = useDispatch();
   const onFinish = (values) => {
-    const newUser = {
+    const newUser = [ ...usersStore.listUsers ,{
         key: Math.floor(Math.random() * 10000) + 1,
         name: values.name,
         age: values.age,
         address: values.address
-    };
-    setDataSource((pre) => {
-        return [...pre, newUser];
-    });
-    console.log(values);
+    }];
+    dispatch.users.setListUsers(newUser);
   };
   const onReset = () => {
     formRef.current?.resetFields();

@@ -1,4 +1,8 @@
-import { LayoutManager } from "Components/LayoutManager";
+import { NewHelMet } from "Components/Helmet";
 export const Coupon = () => {
-  return (<LayoutManager title="Coupon">Coupon</LayoutManager>)
-}
+  return (
+    <>
+      <NewHelMet title="Coupon"></NewHelMet>
+    </>
+  );
+};

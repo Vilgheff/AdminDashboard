@@ -1,6 +1,5 @@
-import { LayoutManager } from "Components/LayoutManager";
 import { AntCharts, LineCharts } from "Components/AntCharts";
-import styled from "styled-components";
+import { NewHelMet } from "Components/Helmet";
 const data = [
   {
     type: "分类一",
@@ -79,12 +78,10 @@ const data3 = [
     value: 5,
   },
 ];
-const StyledLayoutManager = styled(LayoutManager)`
-  width: 100%;
-`;
 export const Home = () => {
   return (
-    <StyledLayoutManager title="Home">
+    <>
+      <NewHelMet title="Home"></NewHelMet>
       <div className="top-content-charts">
         <AntCharts data={data}></AntCharts>
         <AntCharts data={data2}></AntCharts>
@@ -93,6 +90,6 @@ export const Home = () => {
       <div className="bot-content-charts">
         <LineCharts></LineCharts>
       </div>
-    </StyledLayoutManager>
+    </>
   );
 };

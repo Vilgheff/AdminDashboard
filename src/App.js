@@ -6,17 +6,19 @@ import { Customers } from "./Containers/Customers";
 import { Orders } from "./Containers/Orders";
 import { Coupon } from "./Containers/Coupon";
 import { Product } from "./Containers/Product";
-
+import { LayoutManager } from "Components/LayoutManager";
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home></Home>}></Route>
-      <Route path="/user" element={<User></User>}></Route>
-      <Route path="/customers" element={<Customers></Customers>}></Route>
-      <Route path="/product" element={<Product></Product>}></Route>
-      <Route path="/orders" element={<Orders></Orders>}></Route>
-      <Route path="/coupon" element={<Coupon></Coupon>}></Route>
+      <Route path="/" element={<LayoutManager></LayoutManager>}>
+        <Route index element={<Home></Home>}></Route>
+        <Route path="/user" element={<User></User>}></Route>
+        <Route path="/customers" element={<Customers></Customers>}></Route>
+        <Route path="/product" element={<Product></Product>}></Route>
+        <Route path="/orders" element={<Orders></Orders>}></Route>
+        <Route path="/coupon" element={<Coupon></Coupon>}></Route>
+      </Route>
     </Routes>
   );
 }

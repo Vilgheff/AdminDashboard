@@ -1,4 +1,10 @@
-import { LayoutManager } from "Components/LayoutManager";
+import { AntOrdersTable } from "Components/AntTable";
+import { NewHelMet } from "Components/Helmet";
 export const Orders = () => {
-  return (<LayoutManager title="Orders">Orders</LayoutManager>)
-}
+  return (
+    <>
+      <NewHelMet title="Orders"></NewHelMet>
+      <AntOrdersTable></AntOrdersTable>
+    </>
+  );
+};

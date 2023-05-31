@@ -1,4 +1,11 @@
-import { LayoutManager } from "Components/LayoutManager";
+import { AntCustomersTable } from "Components/AntTable";
+import { NewHelMet } from "Components/Helmet";
+
 export const Customers = () => {
-  return (<LayoutManager title="Customers">Customers</LayoutManager>)
-}
+  return (
+    <>
+      <NewHelMet title="Customers"></NewHelMet>
+      <AntCustomersTable></AntCustomersTable>
+    </>
+  );
+};

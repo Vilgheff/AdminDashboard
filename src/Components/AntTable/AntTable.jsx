@@ -1,7 +1,14 @@
-import { Space, Table, Tag, Button } from "antd";
-import { useState } from "react";
+import { Space, Table } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
-export const AntTable = ({ data, setDataSource }) => {
+export const AntTable = () => {
+  const usersStore = useSelector((state) => state.users);
+  const listUser = [...usersStore.listUsers];
+  const dispatch = useDispatch();
+  useEffect (()=> {
+    dispatch.users.fetchUsers();
+  }, [])
   const columns = [
     {
       title: "Name",
@@ -27,7 +34,7 @@ export const AntTable = ({ data, setDataSource }) => {
           <a>Invite {record.name}</a>
           <a
             onClick={() => {
-              onDeleteUser(record);
+              onDelete(record);
             }}
           >
             Delete
@@ -36,10 +43,8 @@ export const AntTable = ({ data, setDataSource }) => {
       ),
     },
   ];
-  const onDeleteUser = (record) => {
-    setDataSource((pre) => {
-      return pre.filter((user) => user.key !== record.key);
-    });
+  const onDelete = (values) => {
+    dispatch.users.deleteUser(listUser, values);
   };
-  return <Table columns={columns} dataSource={data} />;
+  return <Table columns={columns} dataSource={usersStore.listUsers} />;
 };

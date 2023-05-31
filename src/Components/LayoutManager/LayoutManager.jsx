@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { NavLink, Outlet } from "react-router-dom";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -21,9 +20,26 @@ const StyledLayout = styled(Layout)`
     align-items: center;
     justify-content: space-between;
   }
+  .demo-loadmore-list {
+    min-height: 350px;
+  }
+  .editable-cell {
+    position: relative;
+  }
+
+  .editable-cell-value-wrap {
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+
+  .editable-row:hover .editable-cell-value-wrap {
+    padding: 4px 11px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+  }
 `;
 
-export const LayoutManager = ({ title, children }) => {
+export const LayoutManager = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [current, setCurrent] = useState("1");
   const {
@@ -35,10 +51,6 @@ export const LayoutManager = ({ title, children }) => {
   };
   return (
     <StyledLayout>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content="" />
-      </Helmet>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical" />
         <Menu
@@ -115,7 +127,7 @@ export const LayoutManager = ({ title, children }) => {
             background: colorBgContainer,
           }}
         >
-          {children}
+          <Outlet></Outlet>
         </Content>
       </StyledLayout>
     </StyledLayout>
