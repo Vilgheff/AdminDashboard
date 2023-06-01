@@ -6,9 +6,9 @@ export const AntTable = () => {
   const usersStore = useSelector((state) => state.users);
   const listUser = [...usersStore.listUsers];
   const dispatch = useDispatch();
-  useEffect (()=> {
+  useEffect(() => {
     dispatch.users.fetchUsers();
-  }, [])
+  }, []);
   const columns = [
     {
       title: "Name",
@@ -34,7 +34,7 @@ export const AntTable = () => {
           <a>Invite {record.name}</a>
           <a
             onClick={() => {
-              onDelete(record);
+              dispatch.users.deleteUser(listUser, record);
             }}
           >
             Delete
@@ -43,8 +43,5 @@ export const AntTable = () => {
       ),
     },
   ];
-  const onDelete = (values) => {
-    dispatch.users.deleteUser(listUser, values);
-  };
   return <Table columns={columns} dataSource={usersStore.listUsers} />;
 };

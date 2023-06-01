@@ -19,6 +19,7 @@ const StyledLayout = styled(Layout)`
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 50px;
   }
   .demo-loadmore-list {
     min-height: 350px;
@@ -36,17 +37,16 @@ const StyledLayout = styled(Layout)`
     padding: 4px 11px;
     border: 1px solid #d9d9d9;
     border-radius: 2px;
-  }
+   }
 `;
 
 export const LayoutManager = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const [current, setCurrent] = useState("1");
+  const [current, setCurrent] = useState("");
   const {
     token: { colorBgContainer },
   } = theme.useToken();
   const onClick = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
   };
   return (
