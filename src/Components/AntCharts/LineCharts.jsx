@@ -1,4 +1,6 @@
 import React from "react";
+import styled from "styled-components";
+
 import {
   LineChart,
   Line,
@@ -7,7 +9,22 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+const style = {
+  color: "#A4A4B3",
+  fontFamily: "Montserrat",
+  fontStyle: "normal",
+  fontWeight: "400",
+  fontSize: "12px",
+  lineHeight: "16px",
+  flex: "none",
+  order: "2",
+  flexGrow: "0",
+};
 const data = [
   {
     name: "12:00",
@@ -73,7 +90,7 @@ const data = [
 
 export const LineCharts = () => {
   return (
-    <>
+    <StyledContainer>
       <h1> Token Price</h1>
       <LineChart
         width={600}
@@ -98,8 +115,14 @@ export const LineCharts = () => {
           tickLine={false}
           dataKey="name"
           tickMargin={10}
+          style={style}
         />
-        <YAxis axisLine={false} tickLine={false} tickMargin={10} />
+        <YAxis
+          axisLine={false}
+          tickLine={false}
+          tickMargin={20}
+          style={style}
+        />
         <Tooltip />
         <Line
           type="monotone"
@@ -110,6 +133,6 @@ export const LineCharts = () => {
           dot={false}
         />
       </LineChart>
-    </>
+    </StyledContainer>
   );
 };

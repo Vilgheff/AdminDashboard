@@ -8,7 +8,17 @@ import {
   Tooltip,
   Cell,
 } from "recharts";
-
+const style = {
+    color: "#A4A4B3",
+    fontFamily: "Montserrat",
+    fontStyle: "normal",
+    fontWeight: "400",
+    fontSize: "12px",
+    lineHeight: "16px",
+    flex: "none",
+    order: "2",
+    flexGrow: "0",
+  };
 const data = [
   {
     name: "Page A",
@@ -76,6 +86,7 @@ export const PosAndNevChart = () => {
           }}
           dataKey="name"
           tickMargin={10}
+          style={style}
         />
         <YAxis
           tickLine={false}
@@ -83,6 +94,7 @@ export const PosAndNevChart = () => {
           axisLine={{
             opacity: 0.3,
           }}
+          style={style}
         />
         <Tooltip />
         <Bar dataKey="pv" radius={[10, 10, 0, 0]}>
