@@ -3,24 +3,24 @@ import { RadialBarChart, RadialBar, Legend } from "recharts";
 
 const data = [
   {
-    name: "18-24",
+    name: "Bank",
     uv: 31.47,
     fill: "#F3BA2F",
   },
   {
-    name: "25-29",
+    name: "Token",
     uv: 26.69,
     pv: 4567,
     fill: "#54C2C1",
   },
   {
-    name: "30-34",
+    name: "Cash",
     uv: 15.69,
     pv: 1398,
     fill: "#0F0F3F",
   },
   {
-    name: "35-39",
+    name: "Stock",
     uv: 8.22,
     pv: 9800,
     fill: "#9020E9",
@@ -28,8 +28,6 @@ const data = [
 ];
 
 const style = {
-  top: 0,
-  left: 350,
   width: "100%",
   position: "unset",
   lineHeight: "24px",
@@ -44,7 +42,7 @@ export const ReRadialBarChart = () => {
       height={300}
       cx={150}
       cy={150}
-      innerRadius={20}
+      innerRadius={30}
       outerRadius={140}
       startAngle={90}
       endAngle={450}
@@ -53,7 +51,6 @@ export const ReRadialBarChart = () => {
     >
       <RadialBar
         minAngle={15}
-        label={{ position: "insideStart", fill: "#fff" }}
         background
         clockWise
         dataKey="uv"
@@ -61,9 +58,11 @@ export const ReRadialBarChart = () => {
       <Legend
         iconSize={10}
         iconType="circle"
-        layout="vertical"
+        layout="horizontal"
+        verticalAlign="bottom"
         wrapperStyle={style}
       />
+      
     </RadialBarChart>
   );
 };

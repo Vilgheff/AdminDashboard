@@ -33,7 +33,6 @@ export const Home = () => {
       <NewHelMet title="Home"></NewHelMet>
       <div className="top-content-charts">
         <ReRadialBarChart></ReRadialBarChart>
-        <AntRadialBarChart></AntRadialBarChart>
       </div>
       <div className="bot-content-charts">
         <LineCharts></LineCharts>

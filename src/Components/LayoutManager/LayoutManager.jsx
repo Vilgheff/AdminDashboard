@@ -14,12 +14,17 @@ const StyledLayout = styled(Layout)`
   height: 120vh;
   .top-content-charts {
     width: 100%;
+    height: 400px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
+  }
+  .bot-content-chart{
+    width: 100%;
+    height: 400px;
   }
   .demo-loadmore-list {
     min-height: 350px;

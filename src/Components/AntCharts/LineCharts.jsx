@@ -86,6 +86,12 @@ export const LineCharts = () => {
           bottom: 5,
         }}
       >
+        <defs>
+          <linearGradient id="colorUv" x1="0" y1="0" x2="100%" y2="0">
+            <stop offset="0%" stopColor="#9747FF" stopOpacity={1} />
+            <stop offset="107.68%" stopColor="#14F4C9" stopOpacity={1} />
+          </linearGradient>
+        </defs>
         <CartesianGrid vertical={false} />
         <XAxis
           axisLine={false}
@@ -98,7 +104,7 @@ export const LineCharts = () => {
         <Line
           type="monotone"
           dataKey="pv"
-          stroke="red"
+          stroke="url(#colorUv)"
           strokeWidth={3}
           activeDot={{ r: 3 }}
           dot={false}
