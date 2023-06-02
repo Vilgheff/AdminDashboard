@@ -1,4 +1,4 @@
-import { AntCharts, AntRadialBarChart, LineCharts, ReRadialBarChart } from "Components/AntCharts";
+import { AntCharts, AntRadialBarChart, LineCharts, PosAndNevChart, ReRadialBarChart } from "Components/AntCharts";
 import { NewHelMet } from "Components/Helmet";
 const data = [
   {
@@ -33,6 +33,7 @@ export const Home = () => {
       <NewHelMet title="Home"></NewHelMet>
       <div className="top-content-charts">
         <ReRadialBarChart></ReRadialBarChart>
+        <PosAndNevChart></PosAndNevChart>
       </div>
       <div className="bot-content-charts">
         <LineCharts></LineCharts>

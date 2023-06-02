@@ -97,15 +97,15 @@ export const LineCharts = () => {
           axisLine={false}
           tickLine={false}
           dataKey="name"
-          tickMargin={20}
+          tickMargin={10}
         />
-        <YAxis axisLine={false} tickLine={false} tickMargin={20} />
+        <YAxis axisLine={false} tickLine={false} tickMargin={10} />
         <Tooltip />
         <Line
           type="monotone"
           dataKey="pv"
           stroke="url(#colorUv)"
-          strokeWidth={3}
+          strokeWidth={3.75}
           activeDot={{ r: 3 }}
           dot={false}
         />

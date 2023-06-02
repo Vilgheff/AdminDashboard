@@ -17,10 +17,11 @@ const StyledLayout = styled(Layout)`
     height: 400px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
+    gap: 100px;
   }
   .bot-content-chart{
     width: 100%;
