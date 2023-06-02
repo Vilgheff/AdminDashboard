@@ -34,8 +34,8 @@ const data = [
 ];
 
 const style = {
-  width: "100%",
-  position: "unset",
+  width: "30%",
+  position: "center",
   lineHeight: "24px",
   display: "flex",
 };
@@ -63,6 +63,7 @@ export const ReRadialBarChart = () => {
           layout="horizontal"
           verticalAlign="bottom"
           wrapperStyle={style}
+          
         />
       </RadialBarChart>
     </>
